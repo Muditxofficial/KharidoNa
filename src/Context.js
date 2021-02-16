@@ -2,9 +2,12 @@ import { createContext,useEffect,useState } from 'react'
 
 export const Context = createContext();
 
+
+
 export function ContextController ({children}){
     const intialState = {
-        propertyListing:[]
+        propertyListing:[],
+        filter: {}
     }
     const [state, setState] = useState(intialState);
     useEffect(() => {
@@ -16,12 +19,12 @@ export function ContextController ({children}){
 
     },[])
 
-    
-
-    
+   
     return (
 /* Every Context object comes with a Provider React component that allows consuming components to subscribe to context changes. */
-        <Context.Provider value={state}>
+        <Context.Provider value={{
+            propertyListing:state.propertyListing
+        }}>
             {children}
         </Context.Provider>
     )

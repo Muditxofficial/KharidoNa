@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import { Context } from "../Context";
 import {Link} from 'react-router-dom'
+import Filter from "./Filter";
 
 const MainPage = () => {
   const msg = useContext(Context);
   const { propertyListing } = msg;
-  console.log(propertyListing);
+ 
   return (
     <>
-        
+          <Filter/>
           <div className="row">
           {propertyListing.map((x) => (
           <div key={x.id} className="col-sm-6">

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { Context } from "../Context";
 import Select from "react-select";
 const Filter = () => {
@@ -19,7 +19,8 @@ const Filter = () => {
   console.log(check);
   return (
     <div>
-      <h2>In a hurry,Choose from dropdown</h2>
+      <h2>Best Site for Purchasing Properties at viable rates</h2>
+      <p>Don't have enough time filter through different parameters:</p>
       <Select options={arr} onChange={handleOption} />
       {check
         ? check.map((x) => (
@@ -28,7 +29,9 @@ const Filter = () => {
                 <p className="card-text">NAME:{x.title}</p>
                 <p className="card-text">ADDRESS:{x.address}</p>
                 <p className="card-text">PRICE:${x.price}</p>
-                <Link className="btn btn-primary" to={`/details/${x.id}`}>PROPERTY LINK</Link>
+                <Link className="btn btn-primary" to={`/details/${x.id}`}>
+                  PROPERTY LINK
+                </Link>
               </div>
             </div>
           ))

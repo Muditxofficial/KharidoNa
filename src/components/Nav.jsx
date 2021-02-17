@@ -1,12 +1,13 @@
 import React from "react";
+import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
 const Nav = () => {
   return (
-    <nav className="navbar navbar-light bg-primary">
-      <div className="container-fluid">
-        <span className="navbar-text text-dark">--||KharidoNa||--</span>
-      </div>
-    </nav>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6">KharidoNa</Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
